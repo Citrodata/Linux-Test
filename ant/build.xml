@@ -1,0 +1,18 @@
+<project name="Ant-Test" default="build">
+
+	<target name="build">
+		<mkdir dir="bin"/>
+		<javac srcdir="src" destdir="bin"/>
+		<jar jarfile="test.jar">
+			<fileset dir="bin"/>
+			<manifest>
+    				<attribute name="Main-Class" value="Main" />
+ 			</manifest>
+		</jar>
+	</target>
+	<target name="clean">
+		<delete dir="bin"/>
+		<delete file="test.jar"/>
+	</target>
+
+</project>

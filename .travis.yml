@@ -4,6 +4,7 @@ sudo: true
 os: linux
 
 install:
+- sudo apt update
 - sudo apt install build-essential maven ant ivy rustc cargo
 
 script:

@@ -1,0 +1,15 @@
+language: java
+sudo: true
+
+install:
+- apt install build-essential maven ant ivy rustc cargo
+
+script:
+- cd ant
+- ant
+- cd ../make
+- make
+- cd ../maven
+- mvn
+- cd ../rust
+- cargo build

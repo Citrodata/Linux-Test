@@ -6,7 +6,7 @@ jdk:
 
 install:
 - sudo apt update
-- sudo apt install build-essential maven ant rustc cargo
+- sudo apt install build-essential maven ant rustc cargo clang llvm cmake wget
 
 script:
 - cd ant
@@ -17,3 +17,12 @@ script:
 - mvn install test
 - cd ../rust
 - cargo build
+- wget http://releases.llvm.org/7.0.1/llvm-7.0.1.src.tar.xz
+- unxz llvm-7.0.1.src.tar.xz
+- tar -xvf llvm-7.0.1.src.tar
+- rm llvm-7.0.1.src.tar
+- cd llvm-7.0.1.src
+- mkdir build
+- cd build
+- cmake ..
+- make

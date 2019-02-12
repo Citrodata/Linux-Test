@@ -6,7 +6,7 @@ jdk:
 
 install:
 - sudo apt update
-- sudo apt install build-essential maven ant rustc cargo
+- sudo apt install build-essential maven ant rustc cargo golang
 
 script:
 - cd ant
@@ -17,3 +17,5 @@ script:
 - mvn install test
 - cd ../rust
 - cargo build
+- cd ../go
+- go build main.go
